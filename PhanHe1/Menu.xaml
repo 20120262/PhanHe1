@@ -1,0 +1,77 @@
+﻿<Window x:Class="PhanHe1.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhanHe1"
+        mc:Ignorable="d"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FFE5E5E5"
+        Title="Admin_Dashboard" Height="693" Width="1180">
+    <Grid>
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0,58,0,0" Width="610">
+            <Button x:Name="btnAllUser"
+                    Width="250"
+                    Height="250"
+                    FontSize="24"
+                    Content="Quản lý user/role"
+                    Margin="0,0,100,0"
+                    Click="btnAllUser_Click"
+                    Background="#FF627DD2">
+
+            </Button>
+
+            <Button x:Name="btnPriv"
+                    Width="250"
+                    Height="250"
+                    FontSize="24"
+                    Margin="0,0,100,0"
+                    Background="#FF627DD2"
+                    Click="btnPriv_Click">
+                <Button.Content>
+                    <TextBlock TextWrapping="Wrap"
+                               Text="Quản lý quyền"
+                               TextAlignment="Center">
+                    </TextBlock>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0,369,0,0" Width="610">
+            <Button x:Name="btnObject"
+                    Width="250"
+                    Height="250"
+                    FontSize="24"
+                    Margin="0,0,100,0"
+                    Background="#FF627DD2"
+                    Click="btnObject_Click">
+                <Button.Content>
+                    <TextBlock TextWrapping="Wrap"
+                           Text="Quản lý tài nguyên (User Objects)"
+                           Width="215"
+                           TextAlignment="Center" />
+                </Button.Content>
+             
+            </Button>
+            <Button x:Name="btn_DangXuat"
+                    Width="250"
+                    Height="250"
+                    FontSize="24"
+                    Content="Đăng Xuất"
+                    Margin="0,0,100,0"
+                   Click="btn_DangXuat_Click"
+                    Background="#FF627DD2">
+
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

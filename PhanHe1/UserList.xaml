@@ -1,0 +1,112 @@
+﻿<Window x:Class="PhanHe1.UserList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhanHe1"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FFE5E5E5"
+        mc:Ignorable="d"
+        Title="UserList" Height="693" Width="1180">
+    <Grid>
+        <DataGrid x:Name="dgvUser"
+                  ItemsSource="{Binding}"
+                  Height="510"
+                  VerticalAlignment="Top"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="False"
+                  SelectionUnit="FullRow"
+                  SelectionMode="Extended"
+                  FontSize="14"
+                  IsReadOnly="True"
+                  SelectionChanged="dgvUser_RowContentClick"
+                  Margin="25,53,327,0" />
+
+        <StackPanel Orientation="Horizontal"
+                    Margin="27,585,328,15">
+            <Button x:Name="btnAddUser"
+                    Width="160"
+                    Height="50"
+                    Margin="10,0,10,0"
+                    Background="#FF42429D"
+                    Foreground="White"
+                    ToolTip="Resource name: MaterialDesignPaperLightButton"
+                    Content="TẠO USER/ROLE"
+                    IsEnabled="True"
+                    Click="btnAddUser_Click" />
+
+            <Button x:Name="btnDeleteUser"
+                    Width="160"
+                    Height="50"
+                    Background="#FF42429D"
+                    Foreground="White"
+                    Margin="10,0,10,0"
+                    Content="XOÁ USER/ROLE"
+                    IsEnabled="True"
+                    Click="btnDeleteUser_Click"/>
+
+            <Button x:Name="btnGrant"
+                    Width="160"
+                    Height="50"
+                    Background="#FF42429D"
+                    Foreground="White"
+                    Margin="10,0,10,0"
+                    ToolTip="Resource name: MaterialDesignPaperLightButton"
+                    Content="CẤP QUYỀN"
+                    IsEnabled="True" Click="btnGrant_Click" />
+
+            <Button x:Name="btnChangePass"
+                   Width="160"
+                    Height="50"
+                    Background="#FF42429D"
+                    Foreground="White"
+                    Margin="10,0,10,0"
+                    Content="ĐỔI MẬT KHẨU"
+                    IsEnabled="True"
+                    Click="btnChangePass_Click" />
+            
+        </StackPanel>
+
+        <TextBlock HorizontalAlignment="Left"
+                   Margin="27,16,0,0"
+                   TextWrapping="Wrap"
+                   Text="Danh sách user"
+                   FontSize="20"
+                   VerticalAlignment="Top"
+                   FontWeight="Bold"
+                   FontStyle="Italic" />
+        <TextBlock HorizontalAlignment="Left"
+                   Margin="909,21,0,0"
+                   TextWrapping="Wrap"
+                   Text="Danh sách role"
+                   FontSize="20"
+                   VerticalAlignment="Top"
+                   FontWeight="Bold"
+                   FontStyle="Italic" />
+        <DataGrid x:Name="dgvRole"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  FontSize="14"
+                  Height="510"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  Margin="910,53,0,0"
+                  Width="245"
+                  SelectionChanged="dgvRole_SelectionChanged"
+                  Background="#FFDADAAC" />
+        <CheckBox x:Name="cbOnly"
+                  Content="Hiển thị cả user hệ thống"
+                  IsChecked="False"
+                  FontSize="14"
+                  HorizontalAlignment="Left"
+                  Margin="676,21,0,0"
+                  VerticalAlignment="Top"
+                  Checked="cbChange"
+                  Unchecked="cbChange" />
+
+    </Grid>
+</Window>

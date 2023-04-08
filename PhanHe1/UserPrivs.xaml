@@ -1,0 +1,152 @@
+﻿<Window x:Class="PhanHe1.UserPrivs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhanHe1"
+        mc:Ignorable="d"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FFE5E5E5"
+        Title="UserPrivs" Height="693"
+        Width="1180">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" />
+        </Grid.Background>
+
+        <TextBox Name="txtUser"
+                 Margin="56,40,888,600"
+                 Height="37"
+                 Padding="10"
+                
+                 Background="White" />
+        <Button Name="btn_User"
+                Margin="295,43,800,602"
+                Click="btn_User_Click" Content="Search">
+
+        </Button>
+        <DataGrid x:Name="dgvUserPriv"
+                  ItemsSource="{Binding}"
+                  CanUserAddRows="False"
+                  SelectionUnit="FullRow"
+                  SelectionMode="Extended"
+                  Margin="52,111,337,31"
+                  FontSize="14"
+                  IsReadOnly="True"/>
+
+        <RadioButton HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     GroupName="select"
+                     Margin="887,119,0,0"
+                     FontSize="20"
+                     Checked="rdCheck"
+                     Content="Gán quyền">
+
+        </RadioButton>
+        <RadioButton HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="889,306,0,0"
+                     Checked="rdCheck"
+                     FontSize="20"
+                     GroupName="select"
+                     Content="Gán role">
+
+        </RadioButton>
+        <ComboBox x:Name="cbPriv"
+                 
+                  Background="White"
+                  Width="256"
+                  IsEnabled="False"
+                  Margin="885,177,39,0"
+                  VerticalAlignment="Top" Height="35">
+            <ComboBoxItem Content="Xem (Select)"></ComboBoxItem>
+            <ComboBoxItem Content="Thêm (Insert)"></ComboBoxItem>
+            <ComboBoxItem Content="Xoá (Delete)"></ComboBoxItem>
+            <ComboBoxItem Content="Sửa (Update)"></ComboBoxItem>
+            <ComboBoxItem Content="Thực thi (Excute)"></ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox x:Name="cbTable"
+                  
+                  Background="White"
+                  Width="256"
+                  IsEnabled="False"
+                  Margin="885,248,39,0"
+                  VerticalAlignment="Top" Height="35">
+
+        </ComboBox>
+
+        <ComboBox x:Name="cbRole"
+                 
+                  Background="White"
+                  Width="256"
+                  Margin="885,379,39,0"
+                  IsEnabled="False"
+                  VerticalAlignment="Top" Height="38" />
+
+        <TextBox x:Name="tbGrantee"
+                 VerticalAlignment="Top"
+                 Background="White"
+                 Width="256"
+                 Margin="885,444,39,0" Height="35" />
+
+        <Button x:Name="btnGrantPriv"
+                Height="50"
+                Margin="887,588,187,39"
+                Click="btn_GrantPriv_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            Gán quyền
+        </Button>
+
+        <Button x:Name="btnRevoke"
+                Height="50"
+                Background="#FFC53434"
+                Margin="1035,588,39,39"
+                Click="btnRevoke_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+            Thu hồi
+        </Button>
+        <CheckBox x:Name="cbAdminOption"
+                  Content="With Admin option"
+                  HorizontalAlignment="Left"
+                  FontSize="20"
+                  IsChecked="False"
+                  Margin="887,510,0,0"
+                  VerticalAlignment="Top" Height="36" Width="201" />
+        <RadioButton x:Name="rd1"
+                     Content="Các role được gán"
+                     FontSize="16"
+                     HorizontalAlignment="Left"
+                     Margin="404,50,0,0"
+                     VerticalAlignment="Top" />
+        <RadioButton Content="Các quyền được gán"
+                     FontSize="16"
+                     IsChecked="True"
+                     HorizontalAlignment="Left"
+                     Margin="631,50,0,0"
+                     VerticalAlignment="Top" />
+        <Rectangle HorizontalAlignment="Left"
+                   Height="74"
+                   Margin="885,22,0,0"
+                   Stroke="Black"
+                   VerticalAlignment="Top"
+                   Width="256" />
+        <TextBlock HorizontalAlignment="Left" Margin="56,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Grantee"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="885,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Quyền (Privileges)"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="885,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Đối tượng (Object)"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="885,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Role"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="885,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Đối tượng chịu ảnh hưởng (Grantee)"/><LineBreak/><Run/></TextBlock>
+
+    </Grid>
+</Window>
